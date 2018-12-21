@@ -1,25 +1,31 @@
 import React, {useState} from 'react'
+import styled from 'styled-components'
 import CardsList from './components/CardsList'
+import CreateCardForm from './components/CreateCardForm'
 import Quiz from './components/Quiz'
 import Header from './components/Header'
 import Footer from './components/Footer'
 
+const Container = styled.div`
+  max-width: 700px;
+  margin: auto;
+`
+
 const localData = JSON.parse(localStorage.getItem('data') || '{}')
 
 export default () => {
+  const url = history.state && history.state.url
   const {cards} = localData
-  const [selectedCard, selectCard] = useState(null)
-  const [quizRunning, setQuizRunning] = useState(false)
+  const [quizRunning, setQuizRunning] = useState(url === 'quiz')
 
   return (
-    <div>
+    <Container>
       <Header />
       {quizRunning 
         ? <Quiz {...{cards, setQuizRunning}} /> 
-        : <CardsList {...{cards, selectCard, selectedCard, setQuizRunning}} />
+        : <><CardsList {...{cards, setQuizRunning}} /><CreateCardForm /></>
       }
-      {selectedCard && <p>Currently selected card: {selectedCard}</p>}
       <Footer />
-    </div>
+    </Container>
   )
 }
