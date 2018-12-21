@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 import styled from 'styled-components'
+import Button from '../Button'
 
 const FlipCard = styled.div`
   background-color: transparent;
@@ -49,19 +50,25 @@ const FlipCardBack = styled(FlipCardSide)`
   transform: rotateY(180deg);
 `
 
-export default ({term, definition, setFlipped, isFlipped, flipped}) => {
+export default ({term, definition, setFlipped, isFlipped, flipped, idx, editCard, deleteCard}) => {
   return (
-    <FlipCard onClick={() => !isFlipped 
-      ? setFlipped(flipped.concat(term)) 
-      : setFlipped(flipped.filter(t => t !== term))}>
-      <FlipCardInner style={{transform: isFlipped && 'rotateY(180deg)'}}>
-        <FlipCardFront>
-          <p>{term}</p>
-        </FlipCardFront>
-        <FlipCardBack>
-          <p>{definition}</p>
-        </FlipCardBack>
-      </FlipCardInner>
-    </FlipCard>
+    <div>
+      <FlipCard onClick={() => !isFlipped 
+        ? setFlipped(flipped.concat(term)) 
+        : setFlipped(flipped.filter(t => t !== term))}>
+        <FlipCardInner style={{transform: isFlipped && 'rotateY(180deg)'}}>
+          <FlipCardFront>
+            <p>{term}</p>
+          </FlipCardFront>
+          <FlipCardBack>
+            <p>{definition}</p>
+          </FlipCardBack>
+        </FlipCardInner>
+      </FlipCard>
+      <div>
+        <Button onClick={() => editCard(idx)}>Edit</Button>
+        <Button onClick={() => deleteCard(idx)}>Delete</Button>
+      </div>
+    </div>
   )
 }

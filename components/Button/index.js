@@ -5,11 +5,11 @@ const Button = styled.button`
   background-color: lightblue;
   outline: 0;
   border: 0;
-  padding: 0.25rem 0.5rem;
+  padding: 0.35rem 0.5rem;
   cursor: pointer;
   font-weight:bold;
   text-transform:uppercase;
-  margin: 1rem 0;
+  margin: 1rem 0.15rem;
   color: white;
   display: inline-block;
 

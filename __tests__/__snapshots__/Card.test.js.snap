@@ -1,28 +1,44 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`snapshot 1`] = `
-<div
-  className="sc-bdVaJa eRdlms"
-  onClick={[Function]}
->
+<div>
   <div
-    className="sc-bwzfXH hhcFbh"
-    style={
-      Object {
-        "transform": undefined,
-      }
-    }
+    className="sc-bwzfXH jtosRe"
+    onClick={[Function]}
   >
     <div
-      className="sc-htpNat sc-bxivhb cFOsfN"
+      className="sc-htpNat dhmzWx"
+      style={
+        Object {
+          "transform": undefined,
+        }
+      }
     >
-      <p />
+      <div
+        className="sc-bxivhb sc-ifAKCX bGQRXC"
+      >
+        <p />
+      </div>
+      <div
+        className="sc-bxivhb sc-EHOje eqIzFr"
+      >
+        <p />
+      </div>
     </div>
-    <div
-      className="sc-htpNat sc-ifAKCX lnaJNh"
+  </div>
+  <div>
+    <button
+      className="sc-bdVaJa iPNehR"
+      onClick={[Function]}
     >
-      <p />
-    </div>
+      Edit
+    </button>
+    <button
+      className="sc-bdVaJa iPNehR"
+      onClick={[Function]}
+    >
+      Delete
+    </button>
   </div>
 </div>
 `;

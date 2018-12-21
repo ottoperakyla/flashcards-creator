@@ -13,17 +13,23 @@ const Title = styled.h2`
   text-align: center;
 `
 
-export default ({cards, flipped, setFlipped, setQuizRunning}) => {
+export default ({cards, flipped, setFlipped, setQuizRunning, editCard, deleteCard}) => {
   return (
     <div style={{textAlign: 'center'}}>
       <Title>Current terms</Title>
+      {cards.length > 0 ? (
+      <div>
       <CardsListContainer>
         {cards.map((props, idx) => {
           const isFlipped = flipped.includes(props.term)
-          return <Card key={idx} {...props} flipped={flipped} isFlipped={isFlipped} setFlipped={setFlipped} />
+          return <Card key={idx} idx={idx} {...props} deleteCard={deleteCard} editCard={editCard} flipped={flipped} isFlipped={isFlipped} setFlipped={setFlipped} />
         })}
       </CardsListContainer>
       <Button onClick={() => setQuizRunning(true)}>Start quiz</Button>
+      </div>
+      ) : (
+        <div>No terms yet. Add some with the form below!</div>
+      )}
     </div>
   )
 }

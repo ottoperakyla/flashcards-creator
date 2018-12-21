@@ -6,13 +6,21 @@ const Label = styled.label`
   display: block;
 `
 
-export default () => {
-  const [form, setValues] = useState({
-    term: '',
+const TextInput = styled.input`
+  padding: 0.25rem 0;
+  margin: 0 0.25rem;
+`
+
+export default ({addNewCard, cardToEdit}) => {
+  const initialValues = {
+    term: cardToEdit ? cardToEdit.term : '',
     answer: '',
     correctAnswer: 0,
     answers: []
-  })
+  }
+  console.log(cardToEdit, initialValues)
+  
+  const [form, setValues] = useState(initialValues)
 
   const updateField = ({target: {id, value}}) => {
     setValues({
@@ -46,34 +54,44 @@ export default () => {
 
   const onSubmit = e => {
     e.preventDefault()
-    console.log(form)
+    setValues(initialValues)
+    addNewCard({term: form.term, definition: form.answers.find((_,idx) => idx === form.correctAnswer)})
   }
-
+  console.log('term', form.term)
   return ( 
     <div>
       <h2>Create new term</h2>
       <form onSubmit={onSubmit}>
         <Label htmlFor="term">Term
-          <input value={form.term} onChange={updateField} type="text" id="term" />
+          <TextInput value={form.term} onChange={updateField} type="text" id="term" />
         </Label>
         <Label htmlFor="answer">Add answer
-          <input value={form.answer} onChange={updateField} type="text" id="answer" />
+          <TextInput value={form.answer} onChange={updateField} type="text" id="answer" />
           <Button onClick={addAnswer}>Add answer</Button>
         </Label>
-        <div>
+        {form.answers.length > 0 && (
+        <table>
+          <tbody>
+          <tr>
+            <th>Answer</th>
+            <th>Correct?</th>
+            <th>Actions</th>
+          </tr>
           {form.answers.map((answer, idx) => {
             const id = `correct_${idx}`
             return (
-              <div key={id}>
-                {answer}
-                <Label htmlFor={id}>Is correct?
+              <tr key={id}>
+                <td>{answer}</td>
+                <td>
                   <input checked={idx === form.correctAnswer} onChange={() => setCorrectAnswer(idx)} type="radio" id={id} />
-                </Label>
-                <Button onClick={() => deleteAnswer(idx)}>Delete</Button>
-              </div>
+                </td>
+                <td><Button onClick={() => deleteAnswer(idx)}>Delete</Button></td>
+              </tr>
             )
           })}
-        </div>
+          </tbody>
+        </table>
+        )}
         <Button>Add term</Button>
       </form>
     </div>
