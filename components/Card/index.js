@@ -43,12 +43,10 @@ const FlipCardBack = styled(FlipCardSide)`
   transform: rotateY(180deg);
 `
 
-export default ({term, definition}) => {
-  const [flipped, setFlipped] = useState(false)
-
+export default ({term, definition, setFlipped, flipped}) => {
   return (
-    <FlipCard onClick={() => setFlipped(!flipped)}>
-      <FlipCardInner style={{transform: flipped && 'rotateY(180deg)'}}>
+    <FlipCard onClick={() => setFlipped(term)}>
+      <FlipCardInner style={{transform: flipped === term && 'rotateY(180deg)'}}>
         <FlipCardFront>
           <p>{term}</p>
         </FlipCardFront>

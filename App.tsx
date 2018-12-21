@@ -17,13 +17,14 @@ export default () => {
   const url = history.state && history.state.url
   const {cards} = localData
   const [quizRunning, setQuizRunning] = useState(url === 'quiz')
+  const [flipped, setFlipped] = useState(null)
 
   return (
     <Container>
       <Header />
       {quizRunning 
         ? <Quiz {...{cards, setQuizRunning}} /> 
-        : <><CardsList {...{cards, setQuizRunning}} /><CreateCardForm /></>
+        : <><CardsList {...{cards, flipped, setFlipped, setQuizRunning}} /><CreateCardForm /></>
       }
       <Footer />
     </Container>

@@ -13,13 +13,13 @@ const Title = styled.h2`
   text-align: center;
 `
 
-export default ({cards, setQuizRunning}) => {
+export default ({cards, flipped, setFlipped, setQuizRunning}) => {
   return (
     <div style={{textAlign: 'center'}}>
       <Title>Current Cards</Title>
       <CardsListContainer>
         {cards.map((props, idx) => 
-          <Card key={idx} {...props} />
+          <Card key={idx} {...props} flipped={flipped} setFlipped={setFlipped} />
         )}
       </CardsListContainer>
       <Button onClick={() => setQuizRunning(true)}>Start quiz</Button>

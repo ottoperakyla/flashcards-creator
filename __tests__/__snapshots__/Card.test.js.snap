@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`snapshot 1`] = `
+<div
+  className="sc-bdVaJa eLVlXy"
+  onClick={[Function]}
+>
+  <div
+    className="sc-bwzfXH hhcFbh"
+    style={
+      Object {
+        "transform": "rotateY(180deg)",
+      }
+    }
+  >
+    <div
+      className="sc-htpNat sc-bxivhb cFOsfN"
+    >
+      <p />
+    </div>
+    <div
+      className="sc-htpNat sc-ifAKCX lnaJNh"
+    >
+      <p />
+    </div>
+  </div>
+</div>
+`;
