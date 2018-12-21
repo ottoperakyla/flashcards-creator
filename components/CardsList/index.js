@@ -16,11 +16,12 @@ const Title = styled.h2`
 export default ({cards, flipped, setFlipped, setQuizRunning}) => {
   return (
     <div style={{textAlign: 'center'}}>
-      <Title>Current Cards</Title>
+      <Title>Current terms</Title>
       <CardsListContainer>
-        {cards.map((props, idx) => 
-          <Card key={idx} {...props} flipped={flipped} setFlipped={setFlipped} />
-        )}
+        {cards.map((props, idx) => {
+          const isFlipped = flipped.includes(props.term)
+          return <Card key={idx} {...props} flipped={flipped} isFlipped={isFlipped} setFlipped={setFlipped} />
+        })}
       </CardsListContainer>
       <Button onClick={() => setQuizRunning(true)}>Start quiz</Button>
     </div>

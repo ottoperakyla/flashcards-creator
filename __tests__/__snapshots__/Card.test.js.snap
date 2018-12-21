@@ -2,14 +2,14 @@
 
 exports[`snapshot 1`] = `
 <div
-  className="sc-bdVaJa eLVlXy"
+  className="sc-bdVaJa eRdlms"
   onClick={[Function]}
 >
   <div
     className="sc-bwzfXH hhcFbh"
     style={
       Object {
-        "transform": "rotateY(180deg)",
+        "transform": undefined,
       }
     }
   >

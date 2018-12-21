@@ -9,8 +9,14 @@ const FlipCard = styled.div`
   cursor: pointer;
   width: 300px;
   height: 100px;
-  border: 1px solid #f1f1f1;
   perspective: 1000px;
+  transform: scale(1);
+  transition: 250ms ease-in-out;
+  margin: 0 0.25rem;
+
+  &:hover {
+    transform: scale(1.1);
+  }
 `
 
 const FlipCardInner = styled.div`
@@ -43,10 +49,12 @@ const FlipCardBack = styled(FlipCardSide)`
   transform: rotateY(180deg);
 `
 
-export default ({term, definition, setFlipped, flipped}) => {
+export default ({term, definition, setFlipped, isFlipped, flipped}) => {
   return (
-    <FlipCard onClick={() => setFlipped(term)}>
-      <FlipCardInner style={{transform: flipped === term && 'rotateY(180deg)'}}>
+    <FlipCard onClick={() => !isFlipped 
+      ? setFlipped(flipped.concat(term)) 
+      : setFlipped(flipped.filter(t => t !== term))}>
+      <FlipCardInner style={{transform: isFlipped && 'rotateY(180deg)'}}>
         <FlipCardFront>
           <p>{term}</p>
         </FlipCardFront>
