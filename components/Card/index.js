@@ -50,7 +50,8 @@ const FlipCardBack = styled(FlipCardSide)`
   transform: rotateY(180deg);
 `
 
-export default ({term, definition, setFlipped, isFlipped, flipped, idx, editCard, deleteCard}) => {
+export default ({term, answers, setFlipped, isFlipped, flipped, idx, editCard, deleteCard}) => {
+  const definition = answers.find(({correct}) => correct).answer
   return (
     <div>
       <FlipCard onClick={() => !isFlipped 

@@ -55,9 +55,14 @@ export default ({addNewCard, cardToEdit}) => {
   const onSubmit = e => {
     e.preventDefault()
     setValues(initialValues)
-    addNewCard({term: form.term, definition: form.answers.find((_,idx) => idx === form.correctAnswer)})
+    const {term, answers} = form
+    const answersFormatted = answers.map((answer, idx) => ({
+      answer,
+      correct: idx === form.correctAnswer
+    }))
+    addNewCard({term, answers: answersFormatted})
   }
-  console.log('term', form.term)
+  
   return ( 
     <div>
       <h2>Create new term</h2>

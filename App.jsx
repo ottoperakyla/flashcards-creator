@@ -1,10 +1,11 @@
-import React, {useState} from 'react'
+import React, {useState, useContext} from 'react'
 import styled from 'styled-components'
 import CardsList from './components/CardsList'
 import CreateCardForm from './components/CreateCardForm'
 import Quiz from './components/Quiz'
 import Header from './components/Header'
 import Footer from './components/Footer'
+import {shuffle} from './util'
 
 const Container = styled.div`
   max-width: 700px;
@@ -42,7 +43,7 @@ export default () => {
     <Container>
       <Header />
       {quizRunning 
-        ? <Quiz {...{cards, setQuizRunning}} /> 
+        ? <Quiz {...{cards: shuffle(cards), setQuizRunning}} /> 
         : <div>
             <CardsList {...{cards, flipped, setFlipped, setQuizRunning, deleteCard, editCard}} />
             <CreateCardForm {...{addNewCard, cardToEdit}}/>

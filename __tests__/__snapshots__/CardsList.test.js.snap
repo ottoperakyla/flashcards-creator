@@ -1,0 +1,252 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`snapshot (empty cards) 1`] = `
+<div
+  style={
+    Object {
+      "textAlign": "center",
+    }
+  }
+>
+  <h2
+    className="sc-gzVnrw hDwEie"
+  >
+    Current terms
+  </h2>
+  <div>
+    No terms yet. Add some with the form below!
+  </div>
+</div>
+`;
+
+exports[`snapshot (with cards, nothing flipped) 1`] = `
+<div
+  style={
+    Object {
+      "textAlign": "center",
+    }
+  }
+>
+  <h2
+    className="sc-gzVnrw hDwEie"
+  >
+    Current terms
+  </h2>
+  <div>
+    <div
+      className="sc-bZQynM hdGqyk"
+    >
+      <div>
+        <div
+          className="sc-bwzfXH jtosRe"
+          onClick={[Function]}
+        >
+          <div
+            className="test sc-htpNat dhmzWx"
+            style={
+              Object {
+                "transform": false,
+              }
+            }
+          >
+            <div
+              className="sc-bxivhb sc-ifAKCX bGQRXC"
+            >
+              <p>
+                lollero
+              </p>
+            </div>
+            <div
+              className="sc-bxivhb sc-EHOje eqIzFr"
+            >
+              <p>
+                nope
+              </p>
+            </div>
+          </div>
+        </div>
+        <div>
+          <button
+            className="sc-bdVaJa iPNehR"
+            onClick={[Function]}
+          >
+            Edit
+          </button>
+          <button
+            className="sc-bdVaJa iPNehR"
+            onClick={[Function]}
+          >
+            Delete
+          </button>
+        </div>
+      </div>
+      <div>
+        <div
+          className="sc-bwzfXH jtosRe"
+          onClick={[Function]}
+        >
+          <div
+            className="test sc-htpNat dhmzWx"
+            style={
+              Object {
+                "transform": false,
+              }
+            }
+          >
+            <div
+              className="sc-bxivhb sc-ifAKCX bGQRXC"
+            >
+              <p>
+                test2
+              </p>
+            </div>
+            <div
+              className="sc-bxivhb sc-EHOje eqIzFr"
+            >
+              <p>
+                yep
+              </p>
+            </div>
+          </div>
+        </div>
+        <div>
+          <button
+            className="sc-bdVaJa iPNehR"
+            onClick={[Function]}
+          >
+            Edit
+          </button>
+          <button
+            className="sc-bdVaJa iPNehR"
+            onClick={[Function]}
+          >
+            Delete
+          </button>
+        </div>
+      </div>
+    </div>
+    <button
+      className="sc-bdVaJa iPNehR"
+      onClick={[Function]}
+    >
+      Start quiz
+    </button>
+  </div>
+</div>
+`;
+
+exports[`snapshot (with cards, one flipped) 1`] = `
+<div
+  style={
+    Object {
+      "textAlign": "center",
+    }
+  }
+>
+  <h2
+    className="sc-gzVnrw hDwEie"
+  >
+    Current terms
+  </h2>
+  <div>
+    <div
+      className="sc-bZQynM hdGqyk"
+    >
+      <div>
+        <div
+          className="sc-bwzfXH jtosRe"
+          onClick={[Function]}
+        >
+          <div
+            className="test sc-htpNat dhmzWx"
+            style={
+              Object {
+                "transform": "rotateY(180deg)",
+              }
+            }
+          >
+            <div
+              className="sc-bxivhb sc-ifAKCX bGQRXC"
+            >
+              <p>
+                lollero
+              </p>
+            </div>
+            <div
+              className="sc-bxivhb sc-EHOje eqIzFr"
+            >
+              <p>
+                nope
+              </p>
+            </div>
+          </div>
+        </div>
+        <div>
+          <button
+            className="sc-bdVaJa iPNehR"
+            onClick={[Function]}
+          >
+            Edit
+          </button>
+          <button
+            className="sc-bdVaJa iPNehR"
+            onClick={[Function]}
+          >
+            Delete
+          </button>
+        </div>
+      </div>
+      <div>
+        <div
+          className="sc-bwzfXH jtosRe"
+          onClick={[Function]}
+        >
+          <div
+            className="test sc-htpNat dhmzWx"
+            style={
+              Object {
+                "transform": false,
+              }
+            }
+          >
+            <div
+              className="sc-bxivhb sc-ifAKCX bGQRXC"
+            >
+              <p>
+                test2
+              </p>
+            </div>
+            <div
+              className="sc-bxivhb sc-EHOje eqIzFr"
+            >
+              <p>
+                yep
+              </p>
+            </div>
+          </div>
+        </div>
+        <div>
+          <button
+            className="sc-bdVaJa iPNehR"
+            onClick={[Function]}
+          >
+            Edit
+          </button>
+          <button
+            className="sc-bdVaJa iPNehR"
+            onClick={[Function]}
+          >
+            Delete
+          </button>
+        </div>
+      </div>
+    </div>
+    <button
+      className="sc-bdVaJa iPNehR"
+      onClick={[Function]}
+    >
+      Start quiz
+    </button>
+  </div>
+</div>
+`;
