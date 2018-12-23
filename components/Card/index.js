@@ -51,7 +51,7 @@ const FlipCardBack = styled(FlipCardSide)`
 `
 
 export default ({term, answers, setFlipped, isFlipped, flipped, idx, editCard, deleteCard}) => {
-  const definition = answers.find(({correct}) => correct).answer
+  const definition = answers.find(({correct}) => correct)
   return (
     <div>
       <FlipCard onClick={() => !isFlipped 
@@ -62,7 +62,7 @@ export default ({term, answers, setFlipped, isFlipped, flipped, idx, editCard, d
             <p>{term}</p>
           </FlipCardFront>
           <FlipCardBack>
-            <p>{definition}</p>
+            <p>{definition && definition.answer}</p>
           </FlipCardBack>
         </FlipCardInner>
       </FlipCard>
